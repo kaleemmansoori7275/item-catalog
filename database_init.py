@@ -111,6 +111,15 @@ Item3 = Items(name="Football",
 session.add(Item3)
 session.commit()
 
+Item5 = Items(name="Bat Ball",
+               date=datetime.datetime.now(),
+               description="Shoes to play cricket in.",
+               picture="http://bit.ly/2qHbHxd",
+               category_id=5,
+               user_id=5)
+session.add(Item5)
+session.commit()
+
 def is_requirement(line):
     line = line.strip()
     # Skip blank lines, comments, and editable installs
