@@ -44,16 +44,6 @@ class Items(Base):
     user_id = Column(Integer, ForeignKey('user.id'))
     user = relationship(User, backref="items")
 
-    @property
-    def serialize(self):
-        """Return object data in easily serializeable format"""
-        return {
-            'name'          : self.name,
-            'id'            : self.id,
-            'description'   : self.description,
-            'picture'       : self.picture,
-            'category'      : self.category.name
-        }
 
 
 engine = create_engine('sqlite:///catalog.db')
