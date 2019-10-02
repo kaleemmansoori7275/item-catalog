@@ -57,5 +57,10 @@ class Items(Base):
 
 
 engine = create_engine('sqlite:///catalog.db')
+blueprint = make_github_blueprint(
+    client_id="my-key-here",
+    client_secret="my-secret-here",
+)
+app.register_blueprint(blueprint, url_prefix="/login")
 
 Base.metadata.create_all(engine)
