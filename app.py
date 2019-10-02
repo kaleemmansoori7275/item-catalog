@@ -19,10 +19,7 @@ app = Flask(__name__)
 
 #===================
 # GConnect CLIENT_ID
-#===================
-CLIENT_ID = json.loads(
-    open('client_secrets.json', 'r').read())['web']['client_id']
-APPLICATION_NAME = "Item-Catalog"
+
 
 #===================
 # DB
