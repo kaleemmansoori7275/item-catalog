@@ -111,4 +111,17 @@ Item3 = Items(name="Football",
 session.add(Item3)
 session.commit()
 
+def is_requirement(line):
+    line = line.strip()
+    # Skip blank lines, comments, and editable installs
+    return not (
+        line == ""
+        or line.startswith("--")
+        or line.startswith("-r")
+        or line.startswith("#")
+        or line.startswith("-e")
+        or line.startswith("git+")
+    )
+
+
 print "Your database has been populated with fake data!"
